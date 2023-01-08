@@ -1,4 +1,4 @@
-import { run } from '../src/js/index.js';
+import { run } from "../src/js/run.js";
 
 describe('run', () => {
 	it('should return the sum of x and y when operation is sum', () => {
