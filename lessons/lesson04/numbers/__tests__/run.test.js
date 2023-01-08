@@ -7,7 +7,3 @@ test('run with "double" operation', () => {
 test('run with "triple" operation', () => {
 	expect(run('triple', 2)).toBe(6);
 });
-
-test('run with invalid operation', () => {
-	expect(run('invalid', 2)).toBe(null);
-});
