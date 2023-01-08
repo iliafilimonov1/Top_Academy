@@ -1,4 +1,4 @@
-import { getNumberOfChars, getLower, getUpper } from "./helpers.js";
+import { getNumberOfChars, getLower, getUpper } from "../src/js/helpers.js";
 
 describe('getNumberOfChars function', () => {
 	test('should return the number of characters in a string', () => {
