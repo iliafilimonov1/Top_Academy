@@ -3,10 +3,8 @@ const translations = {
 		dutch: "Welkom",
 		french: "Bienvenue",
 		english: "Welcome",
-		spanish: "Bienvenidos",
-		italian: "Ben arrivato",
-		korean: "어서 오십시오"
+		spanish: "Bienvenidos"
 	}
-}
+};
 
 export default translations;

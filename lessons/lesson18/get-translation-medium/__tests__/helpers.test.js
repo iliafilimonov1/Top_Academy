@@ -18,11 +18,11 @@ describe("getTranslation", () => {
 	});
 
 	test("returns the translation for Italian", () => {
-		expect(getTranslation("italian")).toBe("Ben arrivato");
+		expect(getTranslation("italian")).toBe("Welcome");
 	});
 
 	test("returns the translation for Korean", () => {
-		expect(getTranslation("korean")).toBe("어서 오십시오");
+		expect(getTranslation("Korean")).toBe("Welcome");
 	});
 
 	test('returns "welcome" when language is not present', () => {
