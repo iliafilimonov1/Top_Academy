@@ -24,12 +24,4 @@ export default class Tasks {
     return `${this.tasks}`.toLowerCase().split(' , ')
   }
 
-  getUnformattedTasks() {
-    return this.tasks.map(function (task) {
-      return task.toLowerCase();
-    }).join(', ')
-
-    //return this.tasks.join(', ').toLowerCase();
-  }
-
 }

@@ -1,4 +1,3 @@
-/* index.js */
 import Tasks from "./tasks.js";
 
 const dropdown = document.querySelector("#csv-dropdown");
