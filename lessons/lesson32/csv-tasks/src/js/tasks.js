@@ -5,23 +5,23 @@ export default class Tasks {
 
   /** @param {string} csvString */
   importCsv(csvString) {
-    this.tasks = csvString.split(", ");
+    // your code
   }
 
   getCount() {
-    return this.tasks.length;
+    // your code
   }
 
   getFirst() {
-    return this.tasks[0];
+    // your code
   }
 
   getLast() {
-    return this.tasks[this.tasks.length - 1];
+    // your code
   }
 
   getUnformattedTasks() {
-    return `${this.tasks}`.toLowerCase().split(' , ')
+    // your code
   }
 
 }
