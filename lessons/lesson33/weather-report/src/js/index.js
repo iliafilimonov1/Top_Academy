@@ -1,4 +1,3 @@
-/* index.js */
 import data from "./data.js";
 import Weather from "./weather.js";
 
