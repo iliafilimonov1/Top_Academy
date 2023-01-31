@@ -1,4 +1,3 @@
-/* script.js */
 import { getDropdown } from "./countries.js";
 
 const countries = ["Netherlands", "Japan", "Mongolia"];
