@@ -1,4 +1,3 @@
-/* data.js */
 const data = {
   "request": {
     "type": "City",
