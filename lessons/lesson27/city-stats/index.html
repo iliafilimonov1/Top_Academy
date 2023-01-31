@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Hello, bundler!</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="" class="nav-brand">City stats</a>
+        <ul>
+            <li class="nav-item"><a href="about.html">About us</a></li>
+            <li><a href="" class="nav-item btn btn-default">Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="main">
+        <p>Learn more about our company.</p><br />
+        <select id="city-select">
+            <option value="">Select a city</option>
+            <option value="amsterdam">Amsterdam</option>
+            <option value="berlin">Berlin</option>
+        </select>
+        <div class="card">
+            <div><span id="count"></span> citizens can vote in <span id="city-name"></span></div>
+        </div>
+    </div>
+
+    <footer id="footer-wrapper">
+        <a href="about.html" target="_blank">About us</a>
+        <a href="contact.html" target="_blank">Contact us</a>
+    </footer>
+
+    <script type="module" src="src/js/script.js"></script>
+</body>
+
+</html>
