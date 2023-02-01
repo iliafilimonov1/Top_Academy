@@ -1,4 +1,4 @@
-import { Todos } from "../src/js/todos.js";
+import Todos from "../src/js/todos.js";
 
 describe("Todos", () => {
 	let todos;

@@ -1,4 +1,3 @@
-/* index.js */
 import Todos from "./todos.js";
 
 const form = document.querySelector("#todo-form");
