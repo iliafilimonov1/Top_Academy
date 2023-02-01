@@ -1,4 +1,4 @@
-import { WeatherCities } from "../src/js/weather-cities.js";
+import WeatherCities from "../src/js/weather-cities.js";
 
 describe('WeatherCities', () => {
   let cities;
