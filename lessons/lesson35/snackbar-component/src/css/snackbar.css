@@ -1,0 +1,129 @@
+:root {
+  --snackbar-width: 270px;
+  --snackbar-border-radius: 0.25rem;
+  --snackbar-theme-default: #fff;
+  --snackbar-theme-primary: #0d6efd;
+  --snackbar-theme-secondary: #6c757d;
+  --snackbar-theme-success: #198754;
+  --snackbar-theme-danger: #dc3545;
+  --snackbar-theme-warning: #ffc107;
+  --snackbar-theme-info: #0dcaf0;
+  --snackbar-theme-light: #f8f9fa;
+  --snackbar-theme-dark: #212529;
+}
+
+.snackbar-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: var(--snackbar-width);
+}
+
+.snackbar {
+  font-size: 0.875rem;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--snackbar-border-radius);
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s opacity;
+}
+
+.snackbar_default {
+  color: #212529;
+  background-color: var(--snackbar-theme-default);
+}
+
+.snackbar_primary {
+  color: #fff;
+  background-color: var(--snackbar-theme-primary);
+}
+
+.snackbar_secondary {
+  color: #fff;
+  background-color: var(--snackbar-theme-secondary);
+}
+
+.snackbar_success {
+  color: #fff;
+  background-color: var(--snackbar-theme-success);
+}
+
+.snackbar_danger {
+  color: #fff;
+  background-color: var(--snackbar-theme-danger);
+}
+
+.snackbar_warning {
+  color: #212529;
+  background-color: var(--snackbar-theme-warning);
+}
+
+.snackbar_info {
+  color: #212529;
+  background-color: var(--snackbar-theme-info);
+}
+
+.snackbar_light {
+  color: #212529;
+  background-color: var(--snackbar-theme-light);
+}
+
+.snackbar_dark {
+  color: #fff;
+  background-color: var(--snackbar-theme-dark);
+}
+
+.snackbar_primary .snackbar__close,
+.snackbar_secondary .snackbar__close,
+.snackbar_success .snackbar__close,
+.snackbar_danger .snackbar__close,
+.snackbar_dark .snackbar__close {
+  filter: invert(1);
+}
+
+.snackbar:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.snackbar:not(.snackbar_show) {
+  display: none;
+}
+
+.snackbar_showing {
+  opacity: 0;
+}
+
+.snackbar__header {
+  position: relative;
+  padding: 0.5rem 2.25rem 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.snackbar__close {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 0.875em;
+  height: 0.875em;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/0.875em auto no-repeat;
+  border: 0;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.snackbar__close:hover {
+  opacity: 1;
+}
+
+.snackbar__body {
+  padding: 1rem;
+}
+
+.snackbar_message .snackbar__body {
+  padding-right: 2.25rem;
+}

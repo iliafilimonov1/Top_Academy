@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/snackbar.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="nav-brand">Snackbar component</h1>
+    </nav>
+
+    <main class="container">
+        <form id="todo-list-form">
+
+            <label class="label" for="snackbar-title">Заголовок</label>
+            <input id="snackbar-title" name="snackbar-title" type="text" class="input" required
+                placeholder="Введите текст">
+
+            <label class="label" for="snackbar-without-title">
+                <input id="snackbar-without-title" name="snackbar-without-title" type="checkbox" value="" /> Без заголовка
+            </label>
+
+            <label class="label" for="snackbar-text">Текст сообщения</label>
+            <input id="snackbar-text" name="snackbar-text" type="text" class="input" required
+                placeholder="Введите текст">
+
+            <label class="label">Тема компонента</label>
+            <select required class="form-control" id="snackbar-theme" name="snackbar-theme">
+                <option selected value="default">Default</option>
+                <option value="primary">Primary</option>
+                <option value="secondary">Secondary</option>
+                <option value="success">Success</option>
+                <option value="danger">Danger</option>
+                <option value="warning">Warning</option>
+                <option value="info">Info</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+
+            <label class="label" for="snackbar-autohide">
+                <input id="snackbar-autohide" name="snackbar-autohide" type="checkbox" checked /> Скрывать после показа
+            </label>
+
+            <label class="label" for="snackbar-interval">Скрывать через (миллисекунд):</label>
+            <input id="snackbar-interval" name="snackbar-interval" type="number" class="input" required
+                placeholder="Введите значение">
+
+            <button id="add-snackbar" type="button" class="btn btn-default">Добавить snackbar</button>
+        </form>
+    </main>
+
+    <script type="module" src="src/js/editor.js"></script>
+</body>
+
+</html>
