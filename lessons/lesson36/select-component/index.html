@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/custom-select.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="nav-brand">Select component</h1>
+    </nav>
+
+    <main class="container">
+        <div id="select"></div>
+    </main>
+
+
+    <script defer src="src/js/custom-select.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            CustomSelect.create('#select', {
+                name: 'car',
+                targetValue: 'ford',
+                options: [
+                    ['volkswagen', 'Volkswagen'],
+                    ['ford', 'Ford'],
+                    ['toyota', 'Toyota'],
+                    ['nissan', 'Nissan']
+                ],
+                onSelected(select, option) {
+                    // выбранное значение
+                    console.log(`Выбранное значение: ${select.value}`);
+                    // индекс выбранной опции
+                    console.log(`Индекс выбранной опции: ${select.selectedIndex}`);
+                    // выбранный текст опции
+                    const text = option ? option.textContent : '';
+                    console.log(`Выбранный текст опции: ${text}`);
+                },
+            });
+            document.querySelector('.select').addEventListener('.select.change', (e) => {
+                const btn = e.target.querySelector('.-select__toggle');
+                // выбранное значение
+                console.log(`Выбранное значение: ${btn.value}`);
+                // индекс выбранной опции
+                console.log(`Индекс выбранной опции: ${btn.dataset.index}`);
+                // выбранный текст опции
+                const selected = e.target.querySelector('.-select__option_selected');
+                const text = selected ? selected.textContent : '';
+                console.log(`Выбранный текст опции: ${text}`);
+            });
+        })
+    </script>
+</body>
+
+</html>
