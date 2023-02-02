@@ -1,12 +1,8 @@
-import { Snackbar } from "./index.js";
+import { Snackbar } from "./snackbar.js";
 
 document.querySelector('[name="snackbar-without-title"]').onchange = (e) => {
   document.querySelector('[name="snackbar-title"]').disabled = e.target.checked;
 }
-
-document.addEventListener('hide.snackbar', (e) => {
-  console.log(e.target);
-});
 
 document.querySelector('#add-snackbar').onclick = () => {
   new Snackbar({
