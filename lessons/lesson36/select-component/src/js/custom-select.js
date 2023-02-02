@@ -1,13 +1,14 @@
-class CustomSelect {
-  static EL = 'select';
-  static EL_SHOW = 'select_show';
-  static EL_OPTION = 'select__option';
-  static EL_OPTION_SELECTED = 'select__option_selected';
-  static DATA = '[data-select]';
+export default class CustomSelect {
+  static EL = "select";
+  static EL_SHOW = "select_show";
+  static EL_OPTION = "select__option";
+  static EL_OPTION_SELECTED = "select__option_selected";
+  static DATA = "[data-select]";
   static DATA_TOGGLE = '[data-select="toggle"]';
 
   constructor(target, params) {
-    this._el = typeof target === 'string' ? document.querySelector(target) : target;
+    this._el =
+      typeof target === "string" ? document.querySelector(target) : target;
 
     this._params = params || {};
 
@@ -20,7 +21,7 @@ class CustomSelect {
 
     this._elToggle = this._el.querySelector(this.constructor.DATA_TOGGLE);
 
-    this._el.addEventListener('click', this._onClickFn);
+    this._el.addEventListener("click", this._onClickFn);
   }
 
   static template(params) {
@@ -30,12 +31,12 @@ class CustomSelect {
 
     let selectedIndex = -1;
 
-    let selectedValue = '';
+    let selectedValue = "";
 
-    let selectedContent = 'Выберите из списка';
+    let selectedContent = "Выберите из списка";
 
     options.forEach((option, index) => {
-      let selectedClass = '';
+      let selectedClass = "";
 
       if (option[0] === targetValue) {
         selectedClass = ` ${this.EL_OPTION_SELECTED}`;
@@ -51,11 +52,11 @@ class CustomSelect {
     return `<button type="button" class="select__toggle" name="${name}"
       value="${selectedValue}" data-select="toggle" data-index="${selectedIndex}">
       ${selectedContent}</button><div class="select__dropdown">
-      <ul class="select__options">${items.join('')}</ul></div>`;
+      <ul class="select__options">${items.join("")}</ul></div>`;
   }
 
   static hideOpenSelect() {
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
       if (!e.target.closest(`.${this.EL}`)) {
         const elsActive = document.querySelectorAll(`.${this.EL_SHOW}`);
         elsActive.forEach((el) => {
@@ -66,7 +67,8 @@ class CustomSelect {
   }
 
   static create(target, params) {
-    this._el = typeof target === 'string' ? document.querySelector(target) : target;
+    this._el =
+      typeof target === "string" ? document.querySelector(target) : target;
 
     if (this._el) {
       return new this(target, params);
@@ -80,9 +82,9 @@ class CustomSelect {
 
     const type = target.closest(this.constructor.DATA).dataset.select;
 
-    if (type === 'toggle') {
+    if (type === "toggle") {
       this.toggle();
-    } else if (type === 'option') {
+    } else if (type === "option") {
       this._changeValue(target);
     }
   }
@@ -90,7 +92,9 @@ class CustomSelect {
   _updateOption(el) {
     const elOption = el.closest(`.${this.constructor.EL_OPTION}`);
 
-    const elOptionSel = this._el.querySelector(`.${this.constructor.EL_OPTION_SELECTED}`);
+    const elOptionSel = this._el.querySelector(
+      `.${this.constructor.EL_OPTION_SELECTED}`
+    );
 
     if (elOptionSel) {
       elOptionSel.classList.remove(this.constructor.EL_OPTION_SELECTED);
@@ -104,31 +108,33 @@ class CustomSelect {
 
     this._elToggle.dataset.index = elOption.dataset.index;
 
-    this._el.dispatchEvent(new CustomEvent('select.change'));
+    this._el.dispatchEvent(new CustomEvent("select.change"));
 
-    this._params.onSelected ? this._params.onSelected(this, elOption) : null;
+    //this._params.onSelected ? this._params.onSelected(this, elOption) : null;
 
     return elOption.dataset.value;
   }
 
   _reset() {
-    const selected = this._el.querySelector(`.${this.constructor.EL_OPTION_SELECTED}`);
+    const selected = this._el.querySelector(
+      `.${this.constructor.EL_OPTION_SELECTED}`
+    );
 
     if (selected) {
       selected.classList.remove(this.constructor.EL_OPTION_SELECTED);
     }
 
-    this._elToggle.textContent = 'Выберите из списка';
+    this._elToggle.textContent = "Выберите из списка";
 
-    this._elToggle.value = '';
+    this._elToggle.value = "";
 
-    this._elToggle.dataset.index = '-1';
+    this._elToggle.dataset.index = "-1";
 
-    this._el.dispatchEvent(new CustomEvent('select.change'));
+    this._el.dispatchEvent(new CustomEvent("select.change"));
 
-    this._params.onSelected ? this._params.onSelected(this, null) : null;
+    //this._params.onSelected ? this._params.onSelected(this, null) : null;
 
-    return '';
+    return "";
   }
 
   _changeValue(el) {
@@ -153,11 +159,13 @@ class CustomSelect {
   }
 
   toggle() {
-    this._el.classList.contains(this.constructor.EL_SHOW) ? this.hide() : this.show();
+    this._el.classList.contains(this.constructor.EL_SHOW)
+      ? this.hide()
+      : this.show();
   }
 
   dispose() {
-    this._el.removeEventListener('click', this._onClickFn);
+    this._el.removeEventListener("click", this._onClickFn);
   }
 
   get value() {
@@ -167,7 +175,7 @@ class CustomSelect {
   set value(value) {
     let isExists = false;
 
-    this._el.querySelectorAll('.select__option').forEach((option) => {
+    this._el.querySelectorAll(".select__option").forEach((option) => {
       if (option.dataset.value === value) {
         isExists = true;
         this._updateOption(option);
@@ -184,7 +192,9 @@ class CustomSelect {
   }
 
   set selectedIndex(index) {
-    const option = this._el.querySelector(`.select__option[data-index="${index}"]`);
+    const option = this._el.querySelector(
+      `.select__option[data-index="${index}"]`
+    );
     if (option) {
       this._updateOption(option);
     }
