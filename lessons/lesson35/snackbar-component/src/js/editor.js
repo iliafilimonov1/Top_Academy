@@ -14,7 +14,7 @@ document.querySelector('#add-snackbar').onclick = () => {
     text: document.querySelector('[name="snackbar-text"]').value,
     theme: document.querySelector('[name="snackbar-theme"] option:checked').value,
     autohide: document.querySelector('[name="snackbar-autohide"]').checked,
-    interval: parseInt(document.querySelector('[name="snackbar-interval"]').value)
+    interval: Number.parseInt(document.querySelector('[name="snackbar-interval"]').value, 10)
   });
 }
 
