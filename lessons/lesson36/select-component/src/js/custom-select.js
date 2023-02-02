@@ -110,7 +110,7 @@ export default class CustomSelect {
 
     this._el.dispatchEvent(new CustomEvent("select.change"));
 
-    //this._params.onSelected ? this._params.onSelected(this, elOption) : null;
+    this._params.onSelected ? this._params.onSelected(this, elOption) : null;
 
     return elOption.dataset.value;
   }
@@ -132,7 +132,7 @@ export default class CustomSelect {
 
     this._el.dispatchEvent(new CustomEvent("select.change"));
 
-    //this._params.onSelected ? this._params.onSelected(this, null) : null;
+    this._params.onSelected ? this._params.onSelected(this, null) : null;
 
     return "";
   }
