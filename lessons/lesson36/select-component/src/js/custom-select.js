@@ -1,4 +1,4 @@
-export default class CustomSelect {
+class CustomSelect {
   static EL = "select";
   static EL_SHOW = "select_show";
   static EL_OPTION = "select__option";
