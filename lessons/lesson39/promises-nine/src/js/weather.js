@@ -1,5 +1,9 @@
 export const getWeather = city => {
-  // your code
+  fetch(`https://jsdemo-3f387-default-rtdb.europe-west1.firebasedatabase.app/weatherstack/${city}.json`)
+    .then(response => response.json())
+    .then(data => {
+      showTemperature(data)
+    });
 }
 
 
