@@ -1,7 +1,6 @@
 @import "../css/fonts.css";
 @import "../css/normalize.css";
 @import "../css/forms.css";
-@import "../lib/swiper.css";
 @import "../css/modal.css";
 
 
@@ -37,7 +36,9 @@ img {
 .container {
   width: 100%;
   max-width: 1312px;
+  min-width: 320px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 
@@ -199,19 +200,63 @@ img {
 /* cards */
 .cards {
   padding: 30px 0;
+  position: relative;
 }
 
 .card-wrapper {
+  border-top: 3px solid transparent;
+  min-height: 524px;
   position: relative;
   width: 313px;
   display: inline-flex;
+  margin-bottom: 24px;
+}
+
+.card-wrapper:hover {
+  border-top-color: transparent;
+}
+
+.cards::before {
+  content: "";
+  width: 48%;
+  height: 70%;
+  background-color: #FAECE9;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+.btn-example {
+  display: none;
+  justify-content: center;
+  /* при ховере flex */
+  padding: 12px 24px;
+  width: 100%;
+  background-color: #222222;
+  border: 0;
+  font-size: 14px;
+  border-radius: 0;
+  color: #fff;
+  position: absolute;
+  /* остается на том же месте (если нужна логика по клику на кнопку) */
+  z-index: 1;
+  /* на одном уровне с .card-link (z-index: 1) и .heart (z-index: 1) */
+}
+
+.card-wrapper:hover .btn-example {
+  display: flex;
 }
 
 .card {
-  margin-bottom: 30px;
+  width: 100%;
 }
 
 .card img {
+  width: 100%;
+  /* явно растягиваем по ширине родителя */
   max-width: 100%;
   height: 313px;
   vertical-align: middle;
@@ -395,7 +440,6 @@ h3 {
 
 
 /* атомарные классы */
-
 .inline {
   display: inline-block;
   vertical-align: middle;
@@ -409,10 +453,35 @@ h3 {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+
+
+
+
+
+/* media запросы */
+
+
+@media screen and (max-width: 1024px) {
+  .card-wrapper {
+    width: 49%;
+  }
+
+  .cards::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .card-wrapper {
+    width: 100%;
+  }
 }
